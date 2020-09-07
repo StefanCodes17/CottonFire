@@ -1,4 +1,4 @@
-<h1>Cotton Fire (eCommerce Template)</h1>
+##Cotton Fire (eCommerce Template)
 ![eCommerce Live Product](./src/assets/Image 1.png)
 Format: ![Alt Text](url)
 
