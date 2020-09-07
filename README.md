@@ -1,6 +1,12 @@
-<h1>Cotton Fire (eCommerce Template)</h1>
-![eCommerce Live Product](./src/assets/Image 1.png)
-Format: ![Alt Text](url)
+# CottonFire
+> eCommerce Clothing Brand Website Template
 
-## Technology
-Implemented using React and Firebase
+[![NPM Version][npm-image]][npm-url]
+[![Build Status][travis-image]][travis-url]
+[![Downloads Stats][npm-downloads]][npm-url]
+
+A website template for a eCommerce Website with valid user authentication, cart functionality, and email notifications!
+
+![](src/assets/Image 1.png)
+
+
