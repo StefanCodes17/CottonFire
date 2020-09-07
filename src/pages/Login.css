@@ -1,0 +1,124 @@
+@import url('../var.css');
+
+.login__body{
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    place-items: center;
+    overflow: hidden;
+}
+
+.login__background{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    z-index: -1;
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+}
+
+.login__form__container{
+    width: 75vw;
+    max-width: 1100px;
+    height: 85vh;
+    background-color: white;
+    border-radius: 35px;
+    box-shadow: rgba(0, 0, 0, 0.2) 5px 5px 5px,
+     rgba(0, 0, 0, 0.2) -5px -5px 5px;
+}
+
+.login__form{
+    position: relative;
+    padding: 5rem 2rem;
+}
+
+.back__button{
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: var(--secondary-color);
+    border-radius: 50%; 
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    z-index: 3;
+    margin: 15px;
+    transition: color 0.2s linear;
+    transition: background-color 0.2s linear;
+}
+
+.back__button:hover{
+    background-color: white;
+    color: var(--secondary-color);
+}
+
+.login__form__title{
+    width: 100%;
+    text-align: center;
+}
+.login__form__title > h1{
+    font-family: var(--rale);
+    font-size: 2.5rem;
+    letter-spacing: 1px;
+    font-weight: 300;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 500px;
+    padding-top: 50px;
+}
+
+form > input{
+    border: none;
+    width: 80%;
+    padding: 25px 10px;
+    background-color: var(--complement);
+    border-radius: 25px;
+    color: black;
+    font-size: 1rem;
+    margin: 25px 0px;
+}
+
+form > input:focus{
+    outline: none
+}
+
+button{
+    border: none;
+    background: none;
+    background-color: var(--secondary-color);
+    margin: 15px;
+    padding: 10px 15px;
+    border-radius: 15px 0px 15px 0px;
+    color: white;
+    letter-spacing: 2px;
+    font-size: 1rem;
+    transition: 1s;
+}
+
+button:hover{
+    border-radius: 0px;
+}
+
+button:focus{
+    outline: none;
+}
+
+@media(max-width: 550px){
+    .login__background{
+       display: none;
+    }
+    
+.login__form__container{
+    width: 100vw;
+    height: 100vh;
+    background-color: white;
+    border-radius: 0px;
+}
+}

@@ -1,0 +1,109 @@
+@import url('../var.css');
+
+.why__important{
+    color: var(--secondary-color)
+}
+
+.why__container{
+    width: 100vw;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    background-color: var(--tertiary-color);
+    margin-top: 80px;
+}
+
+.why__info__container{
+    width: 90%;
+    position: relative;
+    margin-left: 5%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.why__info__title > h1, .meet__team__title > h1{
+    font-size: 3.5rem;
+    font-family: var(--rale);
+    font-weight: 300;
+    min-width: 250px;
+}
+
+.meet__team__container{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    width: 55%;
+    margin: 4rem auto;
+}
+
+.meet__team__icons{
+    padding: 15px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+.meet__team__icon{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.team__icon{
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+}
+
+#icon1{
+    background: url('../assets/person1.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    object-fit: contain;
+}
+#icon2{
+    background: url('../assets/person2.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    object-fit: contain;
+
+}
+#icon3{
+    background: url('../assets/person3.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    object-fit: contain;
+
+}
+
+.team__name{
+    margin: 10px 0px 0px 0px;
+    font-size: 1.3rem;
+}
+
+.team__description{
+    font-size: 0.9rem;
+}
+
+@media(max-width:500px){
+    .why__info__container{
+        width: 95%;
+        padding: 10px;
+        flex-direction: column;
+    }
+
+    .why__info__title{
+        margin-bottom: 15px;
+    }
+
+    .meet__team__icons{
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    .meet__team__icon{
+        margin: 15px 0px;
+    }
+}

@@ -1,0 +1,155 @@
+@import url('../var.css');
+
+a{
+    text-decoration: none;
+    color: black;
+}
+
+.navbar{
+    min-height: 2rem;
+    width: 95vw;
+    margin: auto;
+    display: grid;
+    grid-template-columns: auto 1fr 1fr;
+    background-color: transparent;
+}
+
+.nav__logo{
+    min-width: 1rem;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    cursor: pointer;
+}
+
+.logo__text{
+    font-family: var(--rale);
+    letter-spacing: 1px;
+    font-size: 1rem;
+    font-weight: 400;
+}
+
+.nav__menu__toggle{
+    grid-column-start: 3;
+    justify-self: end;
+    align-self: center;
+}
+
+@media(min-width: 650px){
+    .nav__menu__toggle{
+        display: none;
+    }
+}
+
+.nav__menu__lg{
+    grid-column-start: 3;
+    display: flex;
+    min-width: 1rem;
+    justify-self: end;
+}
+
+.nav__menu__md{
+    position: absolute;
+    top: 10vh;
+    min-height: 25vh;
+    right: 0;
+    z-index: 1;
+}
+
+.close{
+    display: none;
+    height: 0vh;
+}
+
+.backdrop{
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(255, 255, 255, 0.9);
+    z-index: 0;
+    position: absolute;
+}
+
+.nav__shopping__cart{
+    padding: 5px;
+    border-radius: 50%;
+    transition: background-color 0.5s linear;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.nav__shopping__cart:hover{
+    background-color: var(--secondary-color);
+    color: white;
+}
+
+@media(max-width: 650px){
+    .nav__shopping__cart{
+        display: block;
+    }
+    .nav__shopping__cart:hover{
+        color: black;
+        background: transparent;
+        cursor: pointer;
+    }
+}
+
+.nav__welcome{
+    cursor: default !important;
+}
+
+.nav__welcome:hover{
+    background-color: transparent !important;
+}
+
+.nav__user__name{
+    font-size: 1.2rem;
+    color: var(--secondary-color);
+    cursor: default;
+}
+
+.nav__menu__items__lg
+{
+    display: flex;
+    list-style: none;
+    align-items: center;
+}
+
+.nav__menu__items__md{
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    align-items: center;
+}
+
+.nav__menu__items__md > li{
+    font-size: 1.2rem;
+    padding: 10px 15px;
+    width: 100%;
+}
+
+.nav__menu__items__md > li:hover{
+    background-color: rgba(245, 245, 245)
+}
+
+.nav__menu__items__lg > li
+{   
+    margin-right: 25px;
+    cursor: pointer;
+}
+
+.nav__menu__button__lg{
+    border: none;
+    background: none;
+    background-color: var(--secondary-color);
+    margin: 15px;
+    padding: 10px 15px;
+    border-radius: 15px 0px 15px 0px;
+    color: white;
+    letter-spacing: 2px;
+    font-size: 1rem;
+    transition: 1s;
+}
+
+.nav__menu__button__lg:hover{
+    border-radius: 0px;
+}
