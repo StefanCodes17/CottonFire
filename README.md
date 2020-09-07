@@ -7,6 +7,6 @@
 
 A website template for a eCommerce Website with valid user authentication, cart functionality, and email notifications!
 
-![](src/assets/Image 1.png)
+![](Screenshot.png)
 
 
