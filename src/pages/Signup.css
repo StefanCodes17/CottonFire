@@ -1,6 +1,6 @@
 @import url('../var.css');
 
-.login__body{
+.signup__body{
     width: 100vw;
     height: 100vh;
     display: grid;
@@ -8,7 +8,7 @@
     overflow: hidden;
 }
 
-.login__background{
+.signup__background{
     position: absolute;
     top: 0px;
     left: 0px;
@@ -18,17 +18,18 @@
     overflow: hidden;
 }
 
-.login__form__container{
+.signup__form__container{
     width: 75vw;
     max-width: 1100px;
     height: 85vh;
+    min-height: 500px;
     background-color: white;
     border-radius: 35px;
     box-shadow: rgba(0, 0, 0, 0.2) 5px 5px 5px,
      rgba(0, 0, 0, 0.2) -5px -5px 5px;
 }
 
-.login__form{
+.signup__form{
     position: relative;
     padding: 5rem 2rem;
 }
@@ -55,11 +56,11 @@
     color: var(--secondary-color);
 }
 
-.login__form__title{
+.signup__form__title{
     width: 100%;
     text-align: center;
 }
-.login__form__title > h1{
+.signup__form__title > h1{
     font-family: var(--rale);
     font-size: 2.5rem;
     letter-spacing: 1px;
@@ -111,16 +112,16 @@ button:focus{
     outline: none;
 }
 
-.sign__text{
+.login__text{
     color: var(--secondary-color);
 }
 
 @media(max-width: 550px){
-    .login__background{
+    .signup__background{
        display: none;
     }
     
-    .login__form__container{
+    .signup__form__container{
         width: 100vw;
         height: 100vh;
         background-color: white;

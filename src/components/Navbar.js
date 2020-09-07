@@ -12,6 +12,7 @@ import './Navbar.css'
 
 export default function Navbar() {
     const ctx = useContext(UserContext);
+    console.log(ctx)
 
     const [menu, setMenu] = useState(true);
 
@@ -28,7 +29,7 @@ export default function Navbar() {
         return (
             <>
                 <ul className={width >= 650 ? "nav__menu__items__lg" : menu ? "nav__menu__items__md" : "close"}>
-                    {ctx.user.loggedIn ? <li className="nav__welcome">Welcome,<span className="nav__user__name"> {ctx.user.name} </span></li> : ''}
+                    {ctx ? <li className="nav__welcome">Welcome,<span className="nav__user__name"> {ctx.name} </span></li> : ''}
                     <li>
                         <a href="#about">About</a>
                     </li>
@@ -36,7 +37,7 @@ export default function Navbar() {
                         Shop
                     </li>
                     {
-                        ctx.user.loggedIn ?
+                        ctx ?
                             <li className="nav__shopping__cart">
                                 <ShoppingCartIcon fontSize="medium" />
                             </li> : null
@@ -44,7 +45,7 @@ export default function Navbar() {
                 </ul>
                 <Link to="/login">
                     <button type='button' className="nav__menu__button__lg">
-                        {ctx.user.loggedIn ? <p>Sign Out</p> : <p>Login</p>}
+                        {ctx ? <p>Sign Out</p> : <p>Login</p>}
                     </button>
                 </Link>
             </>
