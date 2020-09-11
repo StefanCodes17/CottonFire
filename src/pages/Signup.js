@@ -4,12 +4,14 @@ import ArrowBackIcon from '@material-ui/icons/ArrowBack';
 
 import './Signup.css'
 
-import { Link } from 'react-router-dom'
+import { Link, useHistory } from 'react-router-dom'
 import { useState } from 'react';
 
 import { auth, generateUserDocument } from '../firebase/firebase'
 
+
 export default function Login() {
+    let history = useHistory();
 
     const [name, setName] = useState('')
     const [email, setEmail] = useState('');
@@ -35,7 +37,8 @@ export default function Login() {
 
         try {
             const { user } = await auth.createUserWithEmailAndPassword(email, pass);
-            generateUserDocument(user, { name });
+            generateUserDocument(user, { name, cart: [] });
+            history.push('/login')
         }
         catch (error) {
             setError('Error Signing up with email and password');
@@ -88,7 +91,7 @@ export default function Login() {
                                 value={pass}
                                 onChange={onChangeHandler}
                             />
-                            <p>{error}</p>
+                            <p className="error">{error}</p>
                             <button type="submit">Register</button>
                         </form>
                         <div className="signup__login__acc">

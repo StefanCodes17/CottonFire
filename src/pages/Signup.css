@@ -133,3 +133,25 @@ button:focus{
       width: 75%;
     }
 }
+@media(max-height: 780px){
+
+    *{
+        overflow-y: scroll;
+    }
+
+    .signup__background{
+       display: none;
+    }
+    
+    .signup__form__container{
+        width: 100vw;
+        height: 100vh;
+        background-color: white;
+        border-radius: 0px;
+    }
+
+    form > input{
+      border: none;
+      width: 75%;
+    }
+}

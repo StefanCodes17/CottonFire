@@ -32,6 +32,9 @@
     position: relative;
     padding: 5rem 2rem;
 }
+.error{
+    background-color: white;
+}
 
 .back__button{
     position: absolute;
@@ -116,6 +119,29 @@ button:focus{
 }
 
 @media(max-width: 550px){
+    .login__background{
+       display: none;
+    }
+    
+    .login__form__container{
+        width: 100vw;
+        height: 100vh;
+        background-color: white;
+        border-radius: 0px;
+    }
+
+    form > input{
+      border: none;
+      width: 75%;
+    }
+}
+
+@media(max-height: 780px){
+
+    *{
+        overflow-y: scroll;
+    }
+
     .login__background{
        display: none;
     }

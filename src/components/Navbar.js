@@ -6,15 +6,17 @@ import Logo from '../assets/Icon.svg'
 import MenuIcon from '@material-ui/icons/Menu';
 import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 
-import { Link } from 'react-router-dom'
+import { Link, Redirect } from 'react-router-dom'
+
+import firebase from 'firebase'
 
 import './Navbar.css'
 
 export default function Navbar() {
     const ctx = useContext(UserContext);
-    console.log(ctx)
 
     const [menu, setMenu] = useState(true);
+    const [about, setAbout] = useState(false);
 
     const { width } = useWindowDimensions();
 
@@ -24,6 +26,15 @@ export default function Navbar() {
         }
     }, [width]);
 
+    const handleSignOut = () => {
+        firebase.auth().signOut()
+            .then(() => {
+                console.log('Successful Signout!')
+            })
+            .catch((err) => {
+                console.log(`Error: ${err}`)
+            })
+    }
 
     const controlMenu = (ctx) => {
         return (
@@ -31,23 +42,32 @@ export default function Navbar() {
                 <ul className={width >= 650 ? "nav__menu__items__lg" : menu ? "nav__menu__items__md" : "close"}>
                     {ctx ? <li className="nav__welcome">Welcome,<span className="nav__user__name"> {ctx.name} </span></li> : ''}
                     <li>
-                        <a href="#about">About</a>
+                        {about && <Redirect to="/" />}
+                        <a href="#about" onClick={() => { setAbout(!about) }}>About</a>
                     </li>
                     <li>
-                        Shop
+                        <Link to="products">Shop</Link>
                     </li>
                     {
                         ctx ?
                             <li className="nav__shopping__cart">
-                                <ShoppingCartIcon fontSize="medium" />
+                                <ShoppingCartIcon />
                             </li> : null
                     }
                 </ul>
-                <Link to="/login">
-                    <button type='button' className="nav__menu__button__lg">
-                        {ctx ? <p>Sign Out</p> : <p>Login</p>}
-                    </button>
-                </Link>
+
+                {
+                    ctx ?
+                        <button type='button' className="nav__menu__button__lg" onClick={handleSignOut}>
+                            <p>Sign Out</p>
+                        </button> :
+                        <Link to="/login">
+                            <button type='button' className="nav__menu__button__lg">
+                                <p>Login</p>
+                            </button>
+                        </Link>
+                }
+
             </>
         )
     }

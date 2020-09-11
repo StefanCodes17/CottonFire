@@ -22,12 +22,11 @@ export const generateUserDocument = async (user, additionalData) => {
     const userRef = firestore.doc(`users/${user.uid}`);
     const snapshot = await userRef.get();
     if (!snapshot.exists) {
-        const { email, name, password } = user;
+        const { email, name } = user;
         try {
             await userRef.set({
                 name,
                 email,
-                password,
                 ...additionalData
             });
         } catch (error) {
@@ -36,6 +35,7 @@ export const generateUserDocument = async (user, additionalData) => {
     }
     return getUserDocument(user.uid);
 };
+
 const getUserDocument = async uid => {
     if (!uid) return null;
     try {
@@ -48,3 +48,23 @@ const getUserDocument = async uid => {
         console.error("Error fetching user", error);
     }
 };
+
+export const generateProductDocument = async (product) => {
+    const productRef = firestore.collection('products')
+    try {
+        await productRef.doc('product').set({
+            name: product.name,
+            price: product.price || 0,
+            category: product.category,
+            desc: product.desc,
+            img: product.img
+        })
+        console.log('Documnet created successfull', product)
+    } catch (error) {
+        console.log('Error creating product', error)
+    }
+}
+
+export const addProductToUser = async (user, product) => {
+    console.log(user, product)
+}

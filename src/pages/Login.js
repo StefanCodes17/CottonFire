@@ -6,9 +6,10 @@ import { auth } from '../firebase/firebase'
 
 import './Login.css'
 
-import { Link } from 'react-router-dom'
+import { Link, useHistory } from 'react-router-dom'
 
-export default function Login() {
+export default function Login(props) {
+    let history = useHistory();
 
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
@@ -25,13 +26,16 @@ export default function Login() {
         }
     };
 
-
     const signInWithEmailAndPasswordHandler = (event) => {
         event.preventDefault();
-        auth.signInWithEmailAndPassword(email, password).catch(error => {
-            setError("Error signing in with password and email!");
-            console.error("Error signing in with password and email", error);
-        });
+        auth.signInWithEmailAndPassword(email, password)
+            .then(() => {
+                history.push("/")
+            })
+            .catch(error => {
+                setError("Error signing in with password and email!");
+                console.error("Error signing in with password and email", error);
+            });
     };
 
     return (
@@ -67,7 +71,7 @@ export default function Login() {
                                 value={password}
                                 onChange={onChangeHandler}
                             />
-                            <p>{error}</p>
+                            <p className="error">{error}</p>
                             <button type="submit">Login</button>
                         </form>
                         <div className="login__signup__acc">
