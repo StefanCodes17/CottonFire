@@ -10,7 +10,7 @@ A website template for a eCommerce Website with valid user authentication, cart 
 * React (Context API)
 * Firebase (FireStore, User Authentication)
 
-## Prototype Link
+## Prototype Link (https://cottonf-da181.web.app/)
 * Login/Sign In Functionality 
 * Cart System (To Do)
 
