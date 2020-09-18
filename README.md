@@ -10,5 +10,9 @@ A website template for a eCommerce Website with valid user authentication, cart 
 * React (Context API)
 * Firebase (FireStore, User Authentication)
 
+## Prototype Link
+* Login/Sign In Functionality 
+* Cart System (To Do)
+
 
 
